@@ -25,4 +25,3 @@ done
   }  
   foo Hello # function name and then the args. 
 ```  
-*   
