@@ -15,8 +15,10 @@ Shell
 * To create an array in shell script: array_name=( value1 value2 )
 * To iterate on an array in for loop: for val in "${array_name[@]}"; do echo $i ; done
 * To create a function in shell script: 
+```bash
   function foo {
     echo $1 # $1 is the first parameter to the function 
   }  
   foo Hello # function name and then the args. 
+```  
 *   
