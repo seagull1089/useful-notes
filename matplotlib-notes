@@ -1,3 +1,0 @@
-Basic tools
-===============
- * create a linear sequence np array --> np.arange(10)
