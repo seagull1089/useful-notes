@@ -1,0 +1,10 @@
+http://vbridge.co.uk/2012/11/05/how-we-tuned-tesseract-to-perform-as-well-as-a-commercial-ocr-package/
+  Compared the output of Tesseract output with another Commercial software.
+  Used Textcleaner with different options to enhance the image for making it more OCR friendly. (./textcleaner -g -e none -f 10 -o 5 Sample.jpg out.jpg)
+  Run OCR after processing with textcleaner, Compare output for different versions of textcleaner outputs.
+  Made 10 different versions of receipt image using Textcleaner with different filter settings, extracted the text from the OCR output of all 10 variants, Compared the output and derived the desired output using an algorithm and REGEX.
+  You can rely on different algorithm on extracting text like :
+  One with most number of charecters
+  One with most number of numbers
+  One with most number of characters and numbers
+  Or do REGEX on OCR outputs of all 10 versions of textcleaner output and select the best match.
