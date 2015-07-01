@@ -29,7 +29,7 @@ println(Source.fromFile("sample.scala").mkString)
 class Car(val year:Int, var miles:Int)
 var car = new Car(2013,0)
 
-// sample scoped
+// anonymous objects
 def createPerson() = { 
   new {
     var first = "James" 
@@ -40,3 +40,25 @@ def createPerson() = {
 var doubleOSeven = createPerson()
 println(doubleOSeven.first, doubleOSeven.last)
 ```
+* Implicit methods to create smaller code. 
+```scala
+println(2.days.ago)
+class IntUtil(val number:Int){ 
+  def days = this
+  
+  def ago = { 
+    var today = Calendar.getInstance
+    today.add(Calendar.DAY_OF_MONTH, -number)
+    today.getTime()
+  }
+}
+
+implicit def someDummyFunction(num:Int)  = new IntUtil(num)
+```
+* SICP -- proceduce vs process
+```scala
+@scala.annotation.tailrec
+def factorial(fact: BigInt, n: BigInt) :BigInt = if (n == BigInt(1)) fact else factorial(fact*n, n-1)
+factorial(1,5000)
+```
+
