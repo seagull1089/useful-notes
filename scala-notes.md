@@ -61,4 +61,57 @@ implicit def someDummyFunction(num:Int)  = new IntUtil(num)
 def factorial(fact: BigInt, n: BigInt) :BigInt = if (n == BigInt(1)) fact else factorial(fact*n, n-1)
 factorial(1,5000)
 ```
+* Traits
+```scala
+trait Friend{ 
+  val name:String
+  def listern = println("I'm" + name + "listening")
+} 
+class Human(val name: String) extends Friend
+class Animal(val name:String)
+class Dog(override val name:String) extends Animal(name) with Friend
+class Cat(oveeride val name:String) extends Animal(name)
+
+// The cat doesn't extend Friend here. 
+val clinton = new Cat("Clinton")
+clinton.listen // Error
+
+// You can extend Friend here. 
+val clinton = new Cat("Clinton") with Friend
+clinton.listen // success
+
+```
+* Decorator Pattern
+```scala 
+abstract class Writer { 
+  def write(msg:String)
+}
+
+class StringWriter extends Writer { 
+  val target = new StringBuilder()
+  override def write(msg:String) = { 
+    target.append(msg)
+  }
+  override def toString = target.toString
+}
+
+trait UppercaseFilter extends Writer { 
+  abstract override def write(msg:String) = { 
+    super.write(msg.toUpperCase())
+  }
+}
+
+trait ProfanityFilter extends Writer {
+  abstract override def write(msg:String) = {
+    super.write(msg.replace("stupid", "s*****"))
+  }
+}
+
+writeStuff(new StringWriter) // this is stupid
+writeStuff(new StringWriter with UpperCaseFilter) // THIS IS STUPID
+writeStuff(new StringWriter with ProfanityFilter) // this is s****
+writeStuff(new StringWriter with UpperCaseFilter with ProfanityFilter) // "THIS IS S****" 
+
+```
+
 
