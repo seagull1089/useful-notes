@@ -113,5 +113,7 @@ writeStuff(new StringWriter with ProfanityFilter) // this is s****
 writeStuff(new StringWriter with UpperCaseFilter with ProfanityFilter) // "THIS IS S****" 
 
 ```
+* Lens in scala - http://koff.io/posts/292173-lens-in-scala - is an abstraction to deal with updating of complex immutable nested objects.
+
 
 
