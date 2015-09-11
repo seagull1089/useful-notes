@@ -114,6 +114,8 @@ writeStuff(new StringWriter with UpperCaseFilter with ProfanityFilter) // "THIS 
 
 ```
 * Lens in scala - http://koff.io/posts/292173-lens-in-scala - is an abstraction to deal with updating of complex immutable nested objects.
+* For a given option instead of ``` opt.map(foo).getOrElse(bar)``` you can use ```opt.fold(bar)(foo)```
+
 
 
 
