@@ -3,11 +3,13 @@
 * OptiML for machine learning tasks. 
 * DSL built on top of scala. Note: cannot intermix scala with the the optiML code. 
 ```
-untilConverged(Kmeans, tol){ Kmeans => 
+untilConverged(kMeans, tol){ kMeans => 
 
- val clusters = samples.groupBy { .. }
- val tol = clusters. .. 
-
+ val clusters = samples.groupBy { sample => 
+  kMeans.mapRows(mean => dist(sample, mean)).minIndex
+ }
+ val newKMeans = clusters.map( c= > c.sum/ .. )
+ newKMeans
 } 
 
 ```
