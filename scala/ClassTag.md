@@ -1,2 +1,2 @@
-# What is a classTag and where can it be useful?
+## Uses of ClassTag
 * Spark uses ClassTag at many places. 
