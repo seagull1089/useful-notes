@@ -7,3 +7,4 @@
 * http://nghiaho.com/?p=1765
 * https://databricks.com/blog/2016/01/25/deep-learning-with-spark-and-tensorflow.html
 * http://dmlc.ml/2016/03/14/xgboost4j-portable-distributed-xgboost-in-spark-flink-and-dataflow.html
+* http://www.deeplearningbook.org/ - Deep Learning Book by Ian Goodfellow, Yoshua Bengio, Aaron Courville. 
