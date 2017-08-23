@@ -16,5 +16,10 @@ untilConverged(kMeans, tol){ kMeans =>
 * Markov state models. 
 * To follow up: What is the advantage of using this framework. 
 
+## Useful tools to explore
+* https://blog.godatadriven.com/divolte-kafka-druid-superset
+* Superset for visualizations - alternative for tableau?
+* Druid -> faster ingestion of messages from kafka and realtime streams and OLAP queries. 
+
 
  
