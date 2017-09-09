@@ -10,6 +10,8 @@ Basic tools
   ax2 = fig.add_subplot(2,2,2)
   ax3 = fig.add_sibplt(2,2,3)
 ```
+* FiveThirtyEight style plots -> https://www.dataquest.io/blog/making-538-plots/
+
 
  
  
