@@ -29,4 +29,6 @@
 
 - Read this paper that introduces RL for inventory management.
 
+## Episodic vs Continuing Tasks 
+
 * When the reward signal is largely uninformative in this way, we say that the task suffers the problem of sparse rewards. There’s an entire area of research dedicated to this problem, and you’re encouraged to read more about it, if it interests you.
