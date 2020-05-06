@@ -1,3 +1,7 @@
+## Bayesian Data Analysis 
+* 20200506: http://www.stat.columbia.edu/~gelman/book/ 
+
+
 ## Delite DSL http://stanford-ppl.github.io/Delite/
 * Provides DSL for various domains. 
 * OptiML for machine learning tasks. 
