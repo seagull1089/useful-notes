@@ -1,6 +1,8 @@
 ## Bayesian Data Analysis 
 * 20200506: http://www.stat.columbia.edu/~gelman/book/ 
 
+## Gradient Surgery for Multi task learning
+* 20200505: https://github.com/tianheyu927/PCGrad, arxivLink: https://arxiv.org/pdf/2001.06782.pdf
 
 ## Delite DSL http://stanford-ppl.github.io/Delite/
 * Provides DSL for various domains. 
