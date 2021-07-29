@@ -1,6 +1,8 @@
 # python pandas tips and notes. 
 * pandas summary : ```pip install  pandas-summary``` can give some really nice statistics about the data in the dataframe. refer to  https://github.com/mouradmourafiq/pandas-summary
-* spark pandas scalar iterator UDF: ``` from typing import Iterator, Tuple
+* spark pandas scalar iterator UDF: 
+``` 
+from typing import Iterator, Tuple
 
 @pandas_udf("double")
 def predict(iterator: Iterator[pd.DataFrame]) -> Iterator[pd.Series]:
@@ -11,4 +13,5 @@ def predict(iterator: Iterator[pd.DataFrame]) -> Iterator[pd.Series]:
     yield pd.Series(model.predict(pdf))
 
 prediction_df = sparkDF.withColumn("prediction", predict(*sparkDF.columns))
-display(prediction_df)```
+display(prediction_df)
+```
