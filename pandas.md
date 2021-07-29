@@ -15,3 +15,13 @@ def predict(iterator: Iterator[pd.DataFrame]) -> Iterator[pd.Series]:
 prediction_df = sparkDF.withColumn("prediction", predict(*sparkDF.columns))
 display(prediction_df)
 ```
+* spark pandas function API: 
+```
+def predict(iterator: Iterator[pd.DataFrame]) -> Iterator[pd.DataFrame]:
+  model_path = f"runs:/{run.info.run_id}/random-forest-model" 
+  model = mlflow.sklearn.load_model(model_path) # Load model
+  for features in iterator:
+    yield pd.concat([features, pd.Series(model.predict(features), name="prediction")], axis=1)
+    
+display(sparkDF.mapInPandas(predict, """`host_total_listings_count` DOUBLE,`neighbourhood_cleansed` BIGINT,`latitude` DOUBLE,`longitude` DOUBLE,`property_type` BIGINT,`room_type` BIGINT,`accommodates` DOUBLE,`bathrooms` DOUBLE,`bedrooms` DOUBLE,`beds` DOUBLE,`bed_type` BIGINT,`minimum_nights` DOUBLE,`number_of_reviews` DOUBLE,`review_scores_rating` DOUBLE,`review_scores_accuracy` DOUBLE,`review_scores_cleanliness` DOUBLE,`review_scores_checkin` DOUBLE,`review_scores_communication` DOUBLE,`review_scores_location` DOUBLE,`review_scores_value` DOUBLE, `prediction` DOUBLE""")) 
+```
